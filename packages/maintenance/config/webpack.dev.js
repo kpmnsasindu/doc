@@ -23,7 +23,7 @@ const devConfig = {
 			name: 'docubinet_maintenance',
 			filename: 'remoteEntry.js',
 			exposes: {
-				'./Maintenance': './src/bootstrap',
+				'./Maintenance': './src/pages/UserMaintenance',
 			},
 			shared: packageJson.dependencies,
 		}),
