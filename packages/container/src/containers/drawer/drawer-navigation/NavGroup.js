@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import { Box, List, Typography } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import NavItem from './NavItem';
 import NavCollapse from './NavCollapse';
 
@@ -14,8 +14,7 @@ import NavCollapse from './NavCollapse';
 
 const NavGroup = ({ item }) => {
 	const theme = useTheme();
-	const menu = useSelector((state) => state.menu);
-	const { drawerOpen } = menu;
+	const { drawerOpen } = useSelector((state) => state.menu);
 
 	const navCollapse = item.children?.map((menuItem) => {
 		switch (menuItem.type) {

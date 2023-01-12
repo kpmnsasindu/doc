@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-// material-ui
+// MUI
 import { useMediaQuery, useTheme } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import NavCard from './NavCard';
 import Navigation from '../drawer-navigation/Navigation';
 import SimpleBar from '../../../components/third-party/SimpleBar';
@@ -14,9 +14,7 @@ import SimpleBar from '../../../components/third-party/SimpleBar';
 const DrawerContent = () => {
 	const theme = useTheme();
 	const matchDownMD = useMediaQuery(theme.breakpoints.down('lg'));
-
-	const menu = useSelector((state) => state.menu);
-	const { drawerOpen } = menu;
+	const { drawerOpen } = useSelector((state) => state.menu);
 
 	return (
 		<SimpleBar

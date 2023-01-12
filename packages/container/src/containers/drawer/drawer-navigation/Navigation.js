@@ -1,18 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-// material-ui
+// MUI
 import { Box, Typography } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import NavGroup from './NavGroup';
 import menuItem from '../../menu-items';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION ||============================== //
 
 const Navigation = () => {
-	const menu = useSelector((state) => state.menu);
-	const { drawerOpen } = menu;
+	const { drawerOpen } = useSelector((state) => state.menu);
 
 	const navGroups = menuItem.items.map((item) => {
 		switch (item.type) {

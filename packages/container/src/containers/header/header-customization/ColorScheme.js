@@ -1,6 +1,6 @@
 import React from 'react';
 
-// material-ui
+// MUI
 import { alpha, useTheme } from '@mui/material/styles';
 import {
 	CardMedia,
@@ -12,25 +12,25 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import useConfig from '../../../hooks/useConfig';
 
-// third-party
+// THIRD-PARTY
 import { presetDarkPalettes, presetPalettes } from '@ant-design/colors';
 
-// assets
+// ASSETS
 import colorLayout from '../../../assets/images/customization/theme-color.svg';
 
 // ==============================|| CUSTOMIZATION - COLOR SCHEME ||============================== //
 
 const ColorScheme = () => {
 	const theme = useTheme();
-
 	const { mode, presetColor, onChangePresetColor } = useConfig();
 
 	const colors = mode === 'dark' ? presetDarkPalettes : presetPalettes;
 	const { blue } = colors;
+
 	const colorOptions = [
 		{
 			id: 'default',

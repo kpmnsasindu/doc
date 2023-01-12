@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	Avatar,
@@ -20,12 +20,12 @@ import {
 	useMediaQuery,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import IconButton from '../../../components/@extended/IconButton';
 import Transitions from '../../../components/@extended/Transitions';
 
-// assets
+// ASSETS
 import {
 	BellOutlined,
 	CheckCircleOutlined,
@@ -34,7 +34,7 @@ import {
 	SettingOutlined,
 } from '@ant-design/icons';
 
-// sx styles
+// SX STYLES
 const avatarSX = {
 	width: 36,
 	height: 36,
@@ -60,6 +60,7 @@ const Notification = () => {
 	const anchorRef = useRef(null);
 	const [read, setRead] = useState(2);
 	const [open, setOpen] = useState(false);
+
 	const handleToggle = () => {
 		setOpen((prevOpen) => !prevOpen);
 	};

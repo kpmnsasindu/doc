@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	Box,
@@ -15,12 +15,12 @@ import {
 	useMediaQuery,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import IconButton from '../../../components/@extended/IconButton';
 import Transitions from '../../../components/@extended/Transitions';
 import useConfig from '../../../hooks/useConfig';
 
-// assets
+// ASSETS
 import { TranslationOutlined } from '@ant-design/icons';
 
 // ==============================|| HEADER CONTENT - LOCALIZATION ||============================== //
@@ -28,11 +28,11 @@ import { TranslationOutlined } from '@ant-design/icons';
 const Localization = () => {
 	const theme = useTheme();
 	const matchesXs = useMediaQuery(theme.breakpoints.down('md'));
-
 	const { i18n, onChangeLocalization } = useConfig();
 
 	const anchorRef = useRef(null);
 	const [open, setOpen] = useState(false);
+
 	const handleToggle = () => {
 		setOpen((prevOpen) => !prevOpen);
 	};

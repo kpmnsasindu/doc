@@ -1,10 +1,10 @@
 import React from 'react';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import { Box, FormControlLabel, Grid, Radio, RadioGroup, Stack, Typography } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import useConfig from '../../../hooks/useConfig';
 
@@ -12,7 +12,6 @@ import useConfig from '../../../hooks/useConfig';
 
 const ThemeFont = () => {
 	const theme = useTheme();
-
 	const { fontFamily, onChangeFontFamily } = useConfig();
 
 	const handleFontChange = (event) => {

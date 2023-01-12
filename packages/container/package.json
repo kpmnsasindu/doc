@@ -1,5 +1,5 @@
 {
-	"name": "docubinet",
+	"name": "docubinet-core",
 	"version": "2.0.0",
 	"description": "Docubinet is one of the Robust and Intelligent Enterprise Document Content Management System runs on Huawei Cloud that helps all sizes and types of businesses around the world to capture, analyse, distribute, store, and utilise content data effectively.",
 	"main": "index.js",

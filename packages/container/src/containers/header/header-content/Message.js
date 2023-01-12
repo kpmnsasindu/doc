@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	Avatar,
@@ -18,19 +18,19 @@ import {
 	useMediaQuery,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import IconButton from '../../../components/@extended/IconButton';
 import Transitions from '../../../components/@extended/Transitions';
 
-// assets
+// ASSETS
 import avatar2 from '../../../assets/images/users/avatar-2.png';
 import avatar3 from '../../../assets/images/users/avatar-3.png';
 import avatar4 from '../../../assets/images/users/avatar-4.png';
 import avatar5 from '../../../assets/images/users/avatar-5.png';
 import { MailOutlined, CloseOutlined } from '@ant-design/icons';
 
-// sx styles
+// SX STYLES
 const avatarSX = {
 	width: 48,
 	height: 48,
@@ -53,6 +53,7 @@ const Message = () => {
 
 	const anchorRef = useRef(null);
 	const [open, setOpen] = useState(false);
+
 	const handleToggle = () => {
 		setOpen((prevOpen) => !prevOpen);
 	};

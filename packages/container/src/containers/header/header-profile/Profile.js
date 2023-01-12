@@ -1,8 +1,12 @@
-import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-// material-ui
+// REDUX
+import { activeItem, clearActiveItem } from '../../../store/reducers/menu';
+import { useDispatch } from 'react-redux';
+
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	Box,
@@ -19,7 +23,7 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import Avatar from '../../../components/@extended/Avatar';
 import MainCard from '../../../components/MainCard';
 import Transitions from '../../../components/@extended/Transitions';
@@ -28,11 +32,11 @@ import IconButton from '../../../components/@extended/IconButton';
 import ProfileTab from './ProfileTab';
 import SettingTab from './SettingTab';
 
-// assets
+// ASSETS
 import avatar1 from '../../../assets/images/users/avatar-1.png';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 
-// tab panel wrapper
+// Tab Panel Wrapper
 function TabPanel({ children, value, index, ...other }) {
 	return (
 		<div
@@ -65,12 +69,15 @@ function a11yProps(index) {
 const Profile = () => {
 	const theme = useTheme();
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	// const { logout, user } = useAuth();
 	const handleLogout = async () => {
 		try {
 			// await logout();
 			sessionStorage.removeItem('isLoggedIn');
+			dispatch(activeItem({ openItem: [] }));
+			dispatch(clearActiveItem({ clearItem: true }));
 			navigate('/login');
 		} catch (err) {
 			console.error(err);
@@ -79,6 +86,8 @@ const Profile = () => {
 
 	const anchorRef = useRef(null);
 	const [open, setOpen] = useState(false);
+	const [value, setValue] = useState(0);
+
 	const handleToggle = () => {
 		setOpen((prevOpen) => !prevOpen);
 	};
@@ -89,8 +98,6 @@ const Profile = () => {
 		}
 		setOpen(false);
 	};
-
-	const [value, setValue] = useState(0);
 
 	const handleChange = (event, newValue) => {
 		setValue(newValue);

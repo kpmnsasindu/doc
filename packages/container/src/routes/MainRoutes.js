@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 
-// project import
+// PROJECT IMPORT
 import MainLayout from '../layout/MainLayout';
 import Loadable from '../components/Loadable';
 import AuthGuard from '../utils/route-guard/AuthGuard';
@@ -8,7 +8,7 @@ import AuthGuard from '../utils/route-guard/AuthGuard';
 // render - dashboard
 const DashboardOne = Loadable(lazy(() => import('../pages/DashboardOne')));
 const DashboardTwo = Loadable(lazy(() => import('../pages/DashboardTwo')));
-const UserMaintenance = Loadable(lazy(() => import('../pages/UserMaintenance')));
+const UserMaintenance = Loadable(lazy(() => import('docubinet_maintenance/Maintenance')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 

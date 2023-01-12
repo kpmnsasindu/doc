@@ -1,5 +1,6 @@
 import React from 'react';
-// material-ui
+
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	CardMedia,
@@ -11,11 +12,11 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import useConfig from '../../../hooks/useConfig';
 
-// assets
+// ASSETS
 import defaultLayout from '../../../assets/images/customization/default.svg';
 import containerLayout from '../../../assets/images/customization/container.svg';
 
@@ -23,7 +24,6 @@ import containerLayout from '../../../assets/images/customization/container.svg'
 
 const ThemeWidth = () => {
 	const theme = useTheme();
-
 	const { container, onChangeContainer } = useConfig();
 
 	const handleContainerChange = () => {

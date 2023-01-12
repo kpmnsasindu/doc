@@ -1,6 +1,6 @@
 import React from 'react';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	CardMedia,
@@ -12,11 +12,11 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import useConfig from '../../../hooks/useConfig';
 
-// assets
+// ASSETS
 import defaultLayout from '../../../assets/images/customization/default.svg';
 import darkLayout from '../../../assets/images/customization/dark.svg';
 
@@ -24,7 +24,6 @@ import darkLayout from '../../../assets/images/customization/dark.svg';
 
 const ThemeModeLayout = () => {
 	const theme = useTheme();
-
 	const { mode, onChangeMode } = useConfig();
 
 	const handleModeChange = (event) => {

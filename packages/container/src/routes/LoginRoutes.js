@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 
-// project import
+// PROJECT IMPORT
 import Loadable from '../components/Loadable';
 
 // render - login

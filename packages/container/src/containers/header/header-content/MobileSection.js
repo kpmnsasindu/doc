@@ -1,17 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import { AppBar, Box, ClickAwayListener, Paper, Popper, Toolbar } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import Search from './Search';
 import Profile from '../header-profile/Profile';
 import Localization from './Localization';
 import IconButton from '../../../components/@extended/IconButton';
 import Transitions from '../../../components/@extended/Transitions';
 
-// assets
+// ASSETS
 import { MoreOutlined } from '@ant-design/icons';
 
 // ==============================|| HEADER CONTENT - MOBILE ||============================== //

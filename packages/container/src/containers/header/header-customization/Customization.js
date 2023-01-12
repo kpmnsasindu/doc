@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	Accordion,
@@ -12,7 +12,7 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import ThemeLayout from './ThemeLayout';
 import ThemeMode from './ThemeMode';
 import ColorScheme from './ColorScheme';
@@ -24,7 +24,7 @@ import AnimateButton from '../../../components/@extended/AnimateButton';
 import SimpleBar from '../../../components/third-party/SimpleBar';
 import useConfig from '../../../hooks/useConfig';
 
-// assets
+// ASSETS
 import {
 	LayoutOutlined,
 	HighlightOutlined,
@@ -53,6 +53,7 @@ const Customization = () => {
 	const themeFont = useMemo(() => <ThemeFont />, [fontFamily]);
 
 	const [open, setOpen] = useState(false);
+
 	const handleToggle = () => {
 		setOpen(!open);
 	};

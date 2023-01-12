@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-// material-ui
+// MUI
 import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
-// assets
+// ASSETS
 import {
 	CommentOutlined,
 	LockOutlined,
@@ -16,6 +16,7 @@ import {
 
 const SettingTab = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
+
 	const handleListItemClick = (event, index) => {
 		setSelectedIndex(index);
 	};

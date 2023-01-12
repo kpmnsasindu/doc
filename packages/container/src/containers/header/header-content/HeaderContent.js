@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 
-// material-ui
+// MUI
 import { Box, useMediaQuery } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import useConfig from '../../../hooks/useConfig';
 import Search from './Search';
 import Message from './Message';
@@ -18,12 +18,10 @@ import MegaMenuSection from './MegaMenuSection';
 
 const HeaderContent = () => {
 	const { i18n } = useConfig();
-
 	const matchesXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const localization = useMemo(() => <Localization />, [i18n]);
-
 	const megaMenu = useMemo(() => <MegaMenuSection />, []);
 
 	return (

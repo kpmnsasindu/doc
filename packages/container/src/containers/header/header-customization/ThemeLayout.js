@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	CardMedia,
@@ -13,12 +13,12 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import useConfig from '../../../hooks/useConfig';
 import { openDrawer } from '../../../store/reducers/menu';
 
-// assets
+// ASSETS
 import defaultLayout from '../../../assets/images/customization/default.svg';
 import rtlLayout from '../../../assets/images/customization/rtl.svg';
 import miniMenu from '../../../assets/images/customization/mini-menu.svg';
@@ -37,21 +37,26 @@ const ThemeLayout = () => {
 	if (themeDirection === 'rtl') initialTheme = 'rtl';
 
 	const [value, setValue] = useState(initialTheme);
+
 	const handleRadioChange = (event) => {
 		const newValue = event.target.value;
 		setValue(newValue);
+
 		if (newValue === 'default') {
 			onChangeDirection('ltr');
 			if (!drawerOpen) {
+				onChangeMiniDrawer(false);
 				dispatch(openDrawer({ drawerOpen: true }));
 			}
 		}
+
 		if (newValue === 'mini') {
 			onChangeMiniDrawer(true);
 			if (drawerOpen) {
 				dispatch(openDrawer({ drawerOpen: false }));
 			}
 		}
+
 		if (newValue === 'rtl') {
 			onChangeDirection('rtl');
 		}

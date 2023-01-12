@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-// material-ui
+// MUI
 import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
-// assets
+// ASSETS
 import {
 	EditOutlined,
 	ProfileOutlined,
@@ -17,6 +17,7 @@ import {
 
 const ProfileTab = ({ handleLogout }) => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
+
 	const handleListItemClick = (event, index) => {
 		setSelectedIndex(index);
 	};

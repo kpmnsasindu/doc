@@ -1,10 +1,12 @@
+import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+// REDUX
 import { useDispatch, useSelector } from 'react-redux';
+import { clearActiveItem } from '../../../store/reducers/menu';
 
-// material-ui
+// MUI
 import { styled, useTheme } from '@mui/material/styles';
 import {
 	Box,
@@ -19,15 +21,14 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import NavItem from './NavItem';
 import Transitions from '../../../components/@extended/Transitions';
 
-// assets
+// ASSETS
 import { BorderOutlined, DownOutlined, UpOutlined } from '@ant-design/icons';
-import { clearActiveItem } from '../../../store/reducers/menu';
 
-// mini-menu - wrapper
+// MINI-MENU - Wrapper
 const PopperStyled = styled(Popper)(({ theme }) => ({
 	overflow: 'visible',
 	zIndex: 1202,
@@ -55,46 +56,32 @@ const NavCollapse = ({ menu, level }) => {
 	const location = useLocation();
 	const dispatch = useDispatch();
 
-	const menuState = useSelector((state) => state.menu);
-	const { drawerOpen, clearItem } = menuState;
-
 	const [open, setOpen] = useState(false);
 	const [selected, setSelected] = useState(null);
-
 	const [anchorEl, setAnchorEl] = useState(null);
+
+	const { drawerOpen, clearItem } = useSelector((state) => state.menu);
+	const pathname = useMemo(() => location.pathname, [location]);
+	const openMini = useMemo(() => Boolean(anchorEl), [anchorEl]);
 
 	const handleClick = (event) => {
 		setAnchorEl(null);
 		if (drawerOpen) {
 			setOpen(!open);
 			setSelected(!selected ? menu.id : null);
-		} else {
-			setAnchorEl(event?.currentTarget);
+			return;
 		}
+		setAnchorEl(event?.currentTarget);
 	};
 
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
 
-	// const { pathname } = useLocation();
-	const pathname = location.pathname;
-
 	useEffect(() => {
-		const childrens = menu.children ? menu.children : [];
-		childrens.forEach((item) => {
-			if (pathname && pathname.includes('product-details')) {
-				if (item.url && item.url.includes('product-details')) {
-					setOpen(true);
-				}
-			}
+		const childrens = menu?.children ?? [];
 
-			if (pathname && pathname.includes('kanban')) {
-				if (item.url && item.url.includes('kanban ')) {
-					setOpen(true);
-				}
-			}
-
+		for (const item of childrens) {
 			if (pathname.includes(item.url)) {
 				setOpen(true);
 				dispatch(clearActiveItem({ clearItem: false }));
@@ -105,11 +92,8 @@ const NavCollapse = ({ menu, level }) => {
 				setOpen(false);
 				setSelected(null);
 			}
-		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [pathname, clearItem, menu]);
-
-	const openMini = Boolean(anchorEl);
+		}
+	}, [pathname, clearItem, menu, dispatch]);
 
 	const navCollapse = menu.children?.map((item) => {
 		switch (item.type) {

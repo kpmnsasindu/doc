@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	Button,
@@ -20,14 +20,14 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
+// PROJECT IMPORT
 import MainCard from '../../../components/MainCard';
 import Dot from '../../../components/@extended/Dot';
 import IconButton from '../../../components/@extended/IconButton';
 import Transitions from '../../../components/@extended/Transitions';
 import { drawerWidth } from '../../../config';
 
-// assets
+// ASSETS
 import { ArrowRightOutlined, WindowsOutlined } from '@ant-design/icons';
 import backgroundVector from '../../../assets/images/mega-menu/back.svg';
 import imageChart from '../../../assets/images/mega-menu/chart.svg';

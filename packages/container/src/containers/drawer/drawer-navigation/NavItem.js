@@ -1,9 +1,12 @@
+import React, { forwardRef, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import React, { forwardRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
-// material-ui
+// REDUX
+import { useDispatch, useSelector } from 'react-redux';
+import { activeItem, clearActiveItem } from '../../../store/reducers/menu';
+
+// MUI
 import { useTheme } from '@mui/material/styles';
 import {
 	Avatar,
@@ -14,17 +17,15 @@ import {
 	Typography,
 } from '@mui/material';
 
-// project import
-import { activeItem, clearActiveItem } from '../../../store/reducers/menu';
-
 // ==============================|| NAVIGATION - LIST ITEM ||============================== //
 
 const NavItem = ({ item, level }) => {
 	const theme = useTheme();
 	const location = useLocation();
 	const dispatch = useDispatch();
-	const menu = useSelector((state) => state.menu);
-	const { drawerOpen, openItem } = menu;
+
+	const { drawerOpen, openItem } = useSelector((state) => state.menu);
+	const pathname = useMemo(() => location.pathname, [location]);
 
 	let itemTarget = '_self';
 	if (item.target) {
@@ -49,23 +50,8 @@ const NavItem = ({ item, level }) => {
 
 	const isSelected = openItem.findIndex((id) => id === item.id) > -1;
 
-	// const { pathname } = useLocation();
-	const pathname = location.pathname;
-
 	// active menu item on page load
 	useEffect(() => {
-		if (pathname && pathname.includes('product-details')) {
-			if (item.url && item.url.includes('product-details')) {
-				dispatch(activeItem({ openItem: [item.id] }));
-			}
-		}
-
-		if (pathname && pathname.includes('kanban')) {
-			if (item.url && item.url.includes('kanban')) {
-				dispatch(activeItem({ openItem: [item.id] }));
-			}
-		}
-
 		if (pathname.includes(item.url)) {
 			dispatch(activeItem({ openItem: [item.id] }));
 			dispatch(clearActiveItem({ clearItem: true }));

@@ -15,15 +15,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import './assets/third-party/apex-chart.css';
 import './assets/third-party/react-table.css';
 
-// load mock apis
-// import '_api';
-
 // project import
 import App from './App';
 import { store, persister } from './store/index';
 import { ConfigProvider } from './contexts/ConfigContext';
 import reportWebVitals from './reportWebVitals';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('docubinet-core-root'));
 // ==============================|| MAIN - REACT DOM RENDER  ||============================== //
 
 root.render(
@@ -37,8 +34,6 @@ root.render(
 		</PersistGate>
 	</ReduxProvider>
 );
-
-//small change for workflow
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

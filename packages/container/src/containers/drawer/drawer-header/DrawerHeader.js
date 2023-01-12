@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// material-ui
+// MUI
 import { useTheme } from '@mui/material/styles';
 
-// project import
+// PROJECT IMPORT
 import DrawerHeaderStyled from '../drawer-styles/DrawerHeaderStyled';
 import Logo from '../../../components/logo';
 
