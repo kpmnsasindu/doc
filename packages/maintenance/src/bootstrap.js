@@ -20,20 +20,32 @@ import App from './App';
 import { store, persister } from './store/index';
 import { ConfigProvider } from './contexts/ConfigContext';
 import reportWebVitals from './reportWebVitals';
-const root = ReactDOM.createRoot(document.getElementById('docubinet-maintenance-root'));
-// ==============================|| MAIN - REACT DOM RENDER  ||============================== //
 
-root.render(
-	<ReduxProvider store={store}>
-		<PersistGate loading={null} persistor={persister}>
-			<ConfigProvider>
-				<BrowserRouter>
-					<App />
-				</BrowserRouter>
-			</ConfigProvider>
-		</PersistGate>
-	</ReduxProvider>
-);
+const mount = (el) => {
+	// const root = ReactDOM.createRoot(document.getElementById('docubinet-maintenance-root'));
+	const root = ReactDOM.createRoot(el);
+	// ==============================|| MAIN - REACT DOM RENDER  ||============================== //
+
+	root.render(
+		<ReduxProvider store={store}>
+			<PersistGate loading={null} persistor={persister}>
+				<ConfigProvider>
+					<BrowserRouter>
+						<App />
+					</BrowserRouter>
+				</ConfigProvider>
+			</PersistGate>
+		</ReduxProvider>
+	);
+};
+
+if (process.env.NODE_ENV === 'development') {
+	const devRoot = document.getElementById('docubinet-maintenance-root');
+
+	if (devRoot) mount(devRoot);
+}
+
+export { mount };
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
