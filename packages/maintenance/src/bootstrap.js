@@ -27,15 +27,15 @@ const mount = (el) => {
 	// ==============================|| MAIN - REACT DOM RENDER  ||============================== //
 
 	root.render(
-		<ReduxProvider store={store}>
-			<PersistGate loading={null} persistor={persister}>
-				<ConfigProvider>
-					<BrowserRouter>
-						<App />
-					</BrowserRouter>
-				</ConfigProvider>
-			</PersistGate>
-		</ReduxProvider>
+		// <ReduxProvider store={store}>
+		// 	<PersistGate loading={null} persistor={persister}>
+		// 		<ConfigProvider>
+		// 			<BrowserRouter>
+		<App />
+		// 			</BrowserRouter>
+		// 		</ConfigProvider>
+		// 	</PersistGate>
+		// </ReduxProvider>
 	);
 };
 

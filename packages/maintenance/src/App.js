@@ -9,18 +9,19 @@ import Snackbar from './components/@extended/Snackbar';
 
 function App() {
 	return (
-		<ThemeCustomization>
-			{/* <RTLLayout> */}
-			<Locales>
-				<ScrollTop>
-					<>
-						<Routes />
-						<Snackbar />
-					</>
-				</ScrollTop>
-			</Locales>
-			{/* </RTLLayout> */}
-		</ThemeCustomization>
+		<div>hello</div>
+		// <ThemeCustomization>
+		// 	{/* <RTLLayout> */}
+		// 	<Locales>
+		// 		<ScrollTop>
+		// 			<>
+		// 				<Routes />
+		// 				<Snackbar />
+		// 			</>
+		// 		</ScrollTop>
+		// 	</Locales>
+		// 	{/* </RTLLayout> */}
+		// </ThemeCustomization>
 	);
 }
 
