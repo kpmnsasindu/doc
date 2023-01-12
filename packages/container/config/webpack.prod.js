@@ -15,7 +15,7 @@ const prodConfig = {
 		new ModuleFederationPlugin({
 			name: 'container',
 			remotes: {
-				docubinet_maintenance: `docubinet_maintenance@${domain}/container/latest/remoteEntry.js`,
+				docubinet_maintenance: `docubinet_maintenance@${domain}/maintenance/latest/remoteEntry.js`,
 			},
 			shared: packageJson.dependencies,
 		}),
