@@ -8,8 +8,8 @@ import AuthGuard from '../utils/route-guard/AuthGuard';
 // render - dashboard
 const DashboardOne = Loadable(lazy(() => import('../pages/DashboardOne')));
 const DashboardTwo = Loadable(lazy(() => import('../pages/DashboardTwo')));
-// const UserMaintenance = Loadable(lazy(() => import('docubinet_maintenance/Maintenance')));
-const UserMaintenance = Loadable(lazy(() => import('../subapps/MaintenanceApp')));
+const UserMaintenance = Loadable(lazy(() => import('docubinet_maintenance/Maintenance')));
+// const UserMaintenance = Loadable(lazy(() => import('../subapps/MaintenanceApp')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
