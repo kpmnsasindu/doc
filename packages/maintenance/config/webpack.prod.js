@@ -16,7 +16,7 @@ const prodConfig = {
 			name: 'docubinet_maintenance',
 			filename: 'remoteEntry.js',
 			exposes: {
-				'./Maintenance': './src/bootstrap',
+				'./Maintenance': './src/App',
 			},
 			shared: packageJson.dependencies,
 		}),
