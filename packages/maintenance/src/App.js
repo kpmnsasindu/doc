@@ -25,6 +25,4 @@ function App() {
 	);
 }
 
-//just a comment
-
 export default App;
