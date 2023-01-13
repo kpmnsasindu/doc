@@ -24,6 +24,6 @@ function App() {
 	);
 }
 
-//change
+//just comment
 
 export default App;
