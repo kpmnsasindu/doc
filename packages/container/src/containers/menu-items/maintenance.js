@@ -22,7 +22,7 @@ const widget = {
 	children: [
 		{
 			id: 3,
-			title: <FormattedMessage id='statistics' />,
+			title: <FormattedMessage id='User Maintenance' />,
 			type: 'item',
 			url: '/maintenance/user-maintenance',
 			icon: icons.IdcardOutlined,
